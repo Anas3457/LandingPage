@@ -11414,6 +11414,52 @@ header.masthead {
   background-position: center center;
   background-size: cover;
 }
+/* Ensure the masthead covers the full width and height of the viewport */
+.masthead {
+  display: flex;
+  justify-content: center; /* Center the flex container horizontally */
+  align-items: center; /* Center the flex container vertically */
+  height: 100vh; /* Full viewport height */
+  background-color: #f4f4f4; /* Optional background color */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+  overflow: hidden; /* Ensure no overflow */
+}
+
+/* Flex container settings */
+.flex-container {
+  display: flex;
+  align-items:center; /* Align items vertically centered within the flex container */
+  justify-content: center; /* Center items horizontally within the flex container */
+  gap: 50px; /* Space between items (adjust as needed) */
+  height: 100%; /* Full height of the masthead */
+}
+
+/* Container for text */
+.containerleft {
+  display: flex;
+  align-items: center; /* Center text vertically within the container */
+  justify-content: center; /* Center text horizontally within the container */
+  z-index: 1; /* Ensure text is on top of the image */
+  max-width: 30%; /* Adjust width as needed */
+}
+
+/* Container for image */
+.containerright {
+  flex: 1; /* Allow image container to take up remaining space */
+    position: absolute; /* Position image container absolutely */
+    right: 0; /* Align image container to the right */
+}
+
+/* Ensure image covers the full height of the masthead */
+.containerright img {
+  width: auto; /* Maintain aspect ratio */
+  height: 100vh; /* Full viewport height */
+  object-fit: cover; /* Ensure image covers the area without distortion */
+  display: block; /* Remove default inline spacing */
+  z-index: 0; /* Ensure image is below text */
+}
+
 header.masthead .masthead-subheading {
   font-size: 1.5rem;
   font-style: italic;
